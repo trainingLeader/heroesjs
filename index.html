@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <script src="js/bootstrap/bootstrap.min.js" defer></script>
+    <script type="module" src="app.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-md-center mt-3">
+            <div class="col col-lg-1">
+
+            </div>
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        Heroes Comics-land 2024 (By CreativeCode)
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion de Heroes</h5>
+                        <div class="container">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="characterName" class="form-label">Nombre Personaje</label>
+                                            <input type="text" class="form-control" name="characterName"
+                                                id="characterName">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="characterName" class="form-label">Nombre Actor</label>
+                                            <input type="text" class="form-control" name="actorName" id="actorName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="age" class="form-label">Edad Actor</label>
+                                            <input type="text" class="form-control" name="age" id="age">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="characterName" class="form-label">Ubicacion</label>
+                                            <input type="text" class="form-control" name="actorName" id="actorName">
+                                            <div id="cityName" class="form-text">Nombre de la ciudad de origen</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card border-primary mb-3" style="max-width: 100%;">
+                                            <div class="card-header">Registro de Trajes</div>
+                                            <div class="card-body text-primary">
+                                                <h5 class="card-title">Trajes del personaje</h5>
+                                                <p class="card-text">En esta sección prodra registrar los nombres de los
+                                                    trajes usados por el actor en cada una de la peliculas.</p>
+                                                <a href="#" class="btn btn-warning" id="addCharacter">+</a>
+                                                <div class="" style="width: 100%;">
+                                                    <form id="frmTrajes">
+                                                        <div class="row justify-content-md-center">
+                                                            <div class="col col-lg-1">
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <div class="col">
+                                                                    <label for="suitName" class="form-label">Nombre
+                                                                        traje</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="actorName" id="suitName">
+                                                                </div>
+                                                                <div class="col  position-relative">
+                                                                    <a href="#"
+                                                                        class="btn btn-danger position-absolute bottom-0 end-0"
+                                                                        id="removeCharacter">-</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col col-lg-1">
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-1">
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
