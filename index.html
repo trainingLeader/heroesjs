@@ -24,13 +24,16 @@
                     <div class="card-body">
                         <h5 class="card-title">Gestion de Heroes</h5>
                         <div class="container">
-                            <form>
+                            <form id="frmSuiteData" class="needs-validation" novalidate>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="characterName" class="form-label">Nombre Personaje</label>
                                             <input type="text" class="form-control" name="characterName"
                                                 id="characterName">
+                                            <div class="valid-feedback">
+                                                    Looks good!
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -57,46 +60,39 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
+                                        <div class="mb-3">
+                                            <label for="poster" class="form-label">Poster</label>
+                                            <input type="text" class="form-control" name="poster" id="poster">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label for="dateAppears" class="form-label">Ubicacion</label>
+                                            <input type="date" class="form-control" name="dateAppears" id="dateAppears">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
                                         <div class="card border-primary mb-3" style="max-width: 100%;">
                                             <div class="card-header">Registro de Trajes</div>
                                             <div class="card-body text-primary">
                                                 <h5 class="card-title">Trajes del personaje</h5>
                                                 <p class="card-text">En esta sección prodra registrar los nombres de los
                                                     trajes usados por el actor en cada una de la peliculas.</p>
-                                                <a href="#" class="btn btn-warning" id="addCharacter">+</a>
+                                                <a href="#" class="btn btn-warning" id="addSuite">+</a>
                                                 <div class="" style="width: 100%;">
-                                                    <form id="frmTrajes">
-                                                        <div class="row justify-content-md-center">
-                                                            <div class="col col-lg-1">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <div class="col">
-                                                                    <label for="suitName" class="form-label">Nombre
-                                                                        traje</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="actorName" id="suitName">
-                                                                </div>
-                                                                <div class="col  position-relative">
-                                                                    <a href="#"
-                                                                        class="btn btn-danger position-absolute bottom-0 end-0"
-                                                                        id="removeCharacter">-</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col col-lg-1">
-                                                            </div>
+                                                        <div class="container body-detail">
 
                                                         </div>
-                                                    </form>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <button class="btn btn-primary" type="submit">Submit form</button>
                             </form>
                         </div>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
