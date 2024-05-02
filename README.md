@@ -1,7 +1,4 @@
 Explicación Completa del Código en Español
-Resumen:
-
-El código proporcionado parece estar relacionado con la gestión de información de superhéroes en una página web. Permite añadir, editar y eliminar datos de superhéroes, así como gestionar las interacciones del usuario y almacenar datos en localStorage.
 
 Análisis Detallado:
 
