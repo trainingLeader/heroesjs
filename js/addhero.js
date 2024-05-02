@@ -1,6 +1,6 @@
 
 let divDetails = document.querySelector('.body-detail');
-
+const grpSuites = document.querySelector('#grpSuites');
 const modelHero = {
     characterName:'',
     actorName:'',
@@ -19,6 +19,7 @@ let characterp = modelHero;
 document.addEventListener('DOMContentLoaded', (e) => {
     clearFrm(true);
     characters = JSON.parse(localStorage.getItem('data'));
+    grpSuites.style.display = 'none';
     console.log(characters);
 });
 
@@ -52,6 +53,10 @@ document.querySelector('#addSuite').addEventListener('click', (e) => {
 document.querySelector('#newHero').addEventListener('click', (e) => {
     clearFrm(false);
     document.querySelector('#characterName').focus();
+});
+document.querySelector('#cancelHero').addEventListener('click', (e) => {
+    clearFrm(true);
+    grpSuites.style.display = 'none';
 });
 
 divDetails.addEventListener("click", (e)=>{
@@ -109,5 +114,10 @@ const clearFrm = (estado) =>{
              frmRegistro.elements[key].value= value;
              frmRegistro.elements[key].disabled = estado;
         });
+        let producerItem = document.getElementsByTagName("select");
+        Array.from(producerItem).forEach(item => {
+            item.disabled = estado;
+        })
+        grpSuites.style.display = 'block';
         divDetails.innerHTML = '';
 }

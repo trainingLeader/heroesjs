@@ -79,7 +79,7 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="producer" class="form-label">Productora</label>
-                                            <select id="producer" class="form-select" name="producer">
+                                            <select id="producer" class="form-select" name="producer" id="producer">
                                               <option value="Marvel">Marvel</option>
                                               <option value="DC">DComics</option>
                                             </select>
@@ -87,7 +87,7 @@
                                     </div>
 
                                 </div>
-                                <div class="row">
+                                <div class="row" id="grpSuites">
                                     <div class="col">
                                         <div class="card border-primary mb-3" style="max-width: 100%;">
                                             <div class="card-header">Registro de Trajes</div>
@@ -105,9 +105,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-dark" id="newHero">Nuevo Heroe</button>
-                                <button type="button" class="btn btn-primary" id="addHero">Guardar Heroe</button>
                             </form>
+                            <button type="button" class="btn btn-dark" id="newHero">Nuevo Heroe</button>
+                            <button type="button" class="btn btn-primary" id="addHero">Guardar Heroe</button>
+                            <button type="button" class="btn btn-danger" id="cancelHero">Cancelar</button>
                         </div>
                     </div>
                 </div>
