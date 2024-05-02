@@ -1,9 +1,57 @@
 
 let divDetails = document.querySelector('.body-detail');
 
+const modelHero = {
+    characterName:'',
+    actorName:'',
+    age:0,
+    cityName:'',
+    poster:'',
+    dateAppears:'',
+    suites:[],
+    producer:{
+    }
+}
 
+let characters =[];
+let characterp = modelHero;
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    clearFrm(true);
+    characters = JSON.parse(localStorage.getItem('data'));
+    console.log(characters);
+});
+
+document.querySelector('#addHero').addEventListener('click',(e) =>{
+    const frmRegistro = document.querySelector('#frmDataHero');
+    const datos = Object.fromEntries(new FormData(frmRegistro).entries());
+    const character = JSON.parse(JSON.stringify(datos));
+    const {characterName,actorName,age,cityName,poster,dateAppears,producer:{}, ...resto} = character;
+    characterp.characterName = characterName;
+    characterp.actorName = actorName;
+    characterp.age = age;
+    characterp.cityName = cityName;
+    characterp.poster = poster;
+    characterp.dateAppears = dateAppears;
+    characterp.producer.nameProducer = character.producer;
+    
+    if(characterp.producer.nameProducer == 'Marvel'){
+        characterp.producer.logoProducer = 'marvel.png';
+    }else{
+        characterp.producer.logoProducer = 'dc.png';
+    }
+    Object.entries(resto).forEach(item =>{
+        characterp.suites.unshift(item[1]);
+    })
+    characters.unshift(characterp);
+    localStorage.setItem('data',JSON.stringify(characters));
+});
 document.querySelector('#addSuite').addEventListener('click', (e) => {
     divDetails.insertAdjacentHTML('beforeend',crearItemHTML());
+});
+document.querySelector('#newHero').addEventListener('click', (e) => {
+    clearFrm(false);
+    document.querySelector('#characterName').focus();
 });
 
 divDetails.addEventListener("click", (e)=>{
@@ -13,10 +61,10 @@ divDetails.addEventListener("click", (e)=>{
     }
 })
 const eliminarItemLista = (idIdx) =>{
-
     let suite = document.querySelector(`#suite${idIdx}`);
     suite.remove();
 }
+
 const crearItemHTML = () => {
     let id = Date.now().toString(16);
     let suiteHTML = /* html */ `
@@ -44,4 +92,22 @@ const crearItemHTML = () => {
                 </div>
     `;
     return suiteHTML;
+}
+const clearFrm = (estado) =>{
+    let frm={
+        characterName:'',
+        actorName:'',
+        age:'',
+        cityName:'',
+        poster:'',
+        dateAppears:'',
+    }
+        const frmRegistro = document.querySelector('#frmDataHero');
+        let myFrm = new FormData();
+        Object.entries(frm).forEach(([key, value]) => myFrm.append(key, value));
+        myFrm.forEach((value, key) => {
+             frmRegistro.elements[key].value= value;
+             frmRegistro.elements[key].disabled = estado;
+        });
+        divDetails.innerHTML = '';
 }

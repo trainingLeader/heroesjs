@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <script src="js/bootstrap/bootstrap.min.js" defer></script>
+    <script src="js/bootstrap/bootstrap.bundle.js" defer></script>
     <script type="module" src="app.js" defer></script>
     <title>Document</title>
 </head>
@@ -24,22 +24,25 @@
                     <div class="card-body">
                         <h5 class="card-title">Gestion de Heroes</h5>
                         <div class="container">
-                            <form id="frmSuiteData" class="needs-validation" novalidate>
+                            <form id="frmDataHero" class="needs-validation" novalidate>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="characterName" class="form-label">Nombre Personaje</label>
                                             <input type="text" class="form-control" name="characterName"
-                                                id="characterName">
-                                            <div class="valid-feedback">
-                                                    Looks good!
-                                            </div>
+                                                id="characterName" required="">
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                  </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="characterName" class="form-label">Nombre Actor</label>
-                                            <input type="text" class="form-control" name="actorName" id="actorName">
+                                            <input type="text" class="form-control" name="actorName" id="actorName" required="">
+                                            <div class="invalid-feedback">
+                                                Please choose a username.
+                                              </div>
                                         </div>
                                     </div>
                                 </div>
@@ -53,8 +56,8 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="characterName" class="form-label">Ubicacion</label>
-                                            <input type="text" class="form-control" name="actorName" id="actorName">
-                                            <div id="cityName" class="form-text">Nombre de la ciudad de origen</div>
+                                            <input type="text" class="form-control" name="cityName" id="cityName">
+                                            <div id="cityNameAux" class="form-text">Nombre de la ciudad de origen</div>
                                         </div>
                                     </div>
                                 </div>
@@ -74,6 +77,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
+                                        <div class="mb-3">
+                                            <label for="producer" class="form-label">Productora</label>
+                                            <select id="producer" class="form-select" name="producer">
+                                              <option value="Marvel">Marvel</option>
+                                              <option value="DC">DComics</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
                                         <div class="card border-primary mb-3" style="max-width: 100%;">
                                             <div class="card-header">Registro de Trajes</div>
                                             <div class="card-body text-primary">
@@ -90,7 +105,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Submit form</button>
+                                <button type="button" class="btn btn-dark" id="newHero">Nuevo Heroe</button>
+                                <button type="button" class="btn btn-primary" id="addHero">Guardar Heroe</button>
                             </form>
                         </div>
                     </div>
